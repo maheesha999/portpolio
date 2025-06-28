@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth ">
+    <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+          <title>Portfolio - Mahee</title>
+
+          <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+           <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+            <!-- AOS Animation Library -->
+            <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+            <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+            <style>
+              
+                
+                @keyframes spin {
+                to {
+                 transform: rotate(360deg);
+                 }
+                }
+                .spin-slow {
+                    animation: spin 6s linear infinite;
+                }
+    
+    
+    /* Invert on light arrow */
+    .light-arrow.invert {
+      filter: invert(1);
+    }
+
+       .typewriter span {
+  color: #9bcceb;;
+  text-shadow: 0 0 4px #1a9ced;
+  position: relative;
+  transition: 0.3s linear;
+}
+
+.typewriter span::before {
+  content: "Frontend Developer";
+  animation: words 7s infinite;
+}
+
+.typewriter span::after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid #fcfcfd;
+  animation: cursor 0.6s linear infinite;
+}
+
+@keyframes cursor {
+  to {
+    border-left: 3px solid #2C3E50;
+  }
+}
+
+@keyframes words {
+  0%, 33% {
+    content: "Frontend Developer";
+  }
+  34%, 66% {
+    content: "UI/UX Designer";
+  }
+  67%, 100% {
+    content: "Mobile App Designer";
+  }
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-links i {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: 0.12rem solid hsl(203, 80%, 84%);
+  border-radius: 50%;
+  color: #f8f9ff;
+  margin: 5px 10px;
+  font-size: 1.1rem;
+  transition: 0.2s linear;
+}
+
+.social-links i:hover {
+  scale: 1.3;
+  color: white;
+  background-color: #96abf1;
+  filter: drop-shadow(0 0 10px #f7fafb);
+}
+
+    /* Hide horizontal scrollbar but keep scroll functionality */
+
+
+.tool-box-small {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+.tool-box-small img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+.tool-box-small:hover {
+  transform: scale(1.1);
+}
+
+
+@keyframes scrollLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scrollLoop 30s linear infinite;
+}
+
+
+                </style>
+
+    </head>
+   <body style="overflow-x: hidden; font-family: 'Outfit', sans-serif; line-height: 2rem;">
+
+
+
+        <nav class="w-full fixed px-5 max-lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+         
+<img id="logo" src="./images/logo2.png" alt="logo" class="w-28 cursor-pointer mr-14">
+
+
+            <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 " style="font-family: 'Ovo', serif;">
+                <li><a href="#top">Home</a></li>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#work">Projects</a></li>
+               
+            </ul>
+            <div class="flex items-center gap-4">
+
+   
+<a href="#contact" class="hidden lg:flex items-center gap-3 px-10 py-2.5 rounded-full bg-gradient-to-r from-[#1F3A93] to-[#0D1B4C] text-white flex items-center gap-2 ml-4 " style="font-family: 'Ovo', serif;">
+                Contact <img id="lightArrow" src="./images/arrow-icon-dark.png" alt="" class="w-3 "></a>
+           <button class="block md:hidden ml-3" onclick="openMenu()">
+  <img id="menuBlack" src="./images/menu-black.png" alt="Menu Black" class="w-6">
+ 
+</button>
+
+        </div>
+       <!------mobile menu-------->
+
+       <ul id="sideMenu" class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-[#F8F9FA] translation duration-500 " style="font-family: 'Ovo', serif;">
+            <div class="absolute right-6 top-6" onclick="closeMenu()">
+                <img src="./images/close-black.png" alt="" class="w-5 cursor-pointer">
+
+       
+            </div>
+                <li><a href="#top" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()">About me</a></li>
+                <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#work" onclick="closeMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+       </ul>
+        </nav>
+
+        <!-- Gradient background wrapper -->
+<div class="w-full min-h-screen bg-[#0A153A] ">
+
+          <!------header-------->
+
+       <div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-3">
+
+  <!-- Animated Image -->
+  <img src="./images/my2.png" alt="" class="rounded-full w-43 mt-8" data-aos="zoom-in" data-aos-delay="100">
+
+  <!-- Animated Heading -->
+  <h3 class="flex items-center text-white gap-2 text-xl md:text-2xl mt-3" style="font-family: 'Ovo', serif;" data-aos="fade-up" data-aos-delay="300">
+    Hi! I'm <span>Maheesha Liyanage</span>
+    <img src="./images/hand-icon.png" alt="" class="w-6">
+  </h3>
+
+  <!-- Typewriter stays static, but we animate its container -->
+  <div class="text-3xl text-white text-5xl lg:text-[55px] font-bold typewriter mt-3" style="font-family: 'Ovo', serif;" data-aos="fade-up" data-aos-delay="500">
+    I'm  <span></span>
+  </div>
+
+  <!-- Animated Paragraph -->
+  <p class="max-w-2xl mx-auto mt-4 text-gray-300" style="font-family: 'Ovo', serif;" data-aos="fade-up" data-aos-delay="700">
+    I am a third-year IT undergraduate at the SLIIT, passionate about programming and aspiring to become a versatile IT professional.
+  </p>
+
+  <!-- Animated Social Links -->
+  <div class="social-links mt-1" data-aos="fade-up" data-aos-delay="900">
+    <a href="https://github.com/maheesha999"><i class="fa-brands fa-github"></i></a>
+    <a href="https://www.facebook.com/share/12KU4ckXM3L/"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://www.linkedin.com/in/maheesha-liyanage-6a634b320/"><i class="fa-brands fa-linkedin"></i></a>
+   <a href="mailto:maheeshaliyanage999@gmail.com">
+  <i class="fa-solid fa-envelope"></i>
+</a>
+
+  </div>
+
+  <!-- Animated Buttons -->
+  <div class="flex flex-col sm:flex-row items-center gap-4 mt-4" data-aos="fade-up" data-aos-delay="1100">
+    <a href="#contact" class="px-10 py-3 rounded-full bg-gradient-to-r from-[#1F3A93] to-[#2C3E50] text-white flex items-center gap-2 transition-all duration-300 hover:from-[#1F3A93] hover:to-[#87CEFA]">
+      contact me <img src="./images/right-arrow-white.png" alt="" class="w-4">
+    </a>
+    <a href="./public/myresum.pdf" download class="px-10 py-3 rounded-full flex items-center gap-2 text-white bg-gradient-to-r from-[#0D1B4C] to-[#1F3A93] hover:bg-[#f2f2f2] transition-all duration-300 hover:from-[#1F3A93] hover:to-[#0D1B4C]  ">
+      my resume <img src="./images/download.png" alt="" class="w-4">
+    </a>
+  </div>
+</div>
+        <!-- ======= Stats Section ======= -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
+      
+      <!-- Project Complete -->
+      <div class="bg-gradient-to-r from-[#87CEFA] to-white rounded-lg p-4 shadow-sm border flex items-center gap-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="bg-[#0D1B4C] p-3 rounded-full flex items-center justify-center w-14 h-14 hover:scale-105 hover:shadow-md transition">
+          <img src="./images/project-icon-dark.png" alt="Projects" class="w-6 h-6">
+        </div>
+        <div>
+          <h2 class="text-xl font-semibold counter" data-target="16">0</h2>
+          <p class="text-[#0D1B4C] font-medium uppercase text-sm">Project Complete</p>
+        </div>
+      </div>
+
+      <!-- Happy Clients -->
+      <div class="bg-gradient-to-l from-[#87CEFA] to-white rounded-lg p-4 shadow-sm border flex items-center gap-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="bg-[#0D1B4C] p-3 rounded-full flex items-center justify-center w-14 h-14 hover:scale-105 hover:shadow-md transition">
+          <img src="./images/client.png" alt="Clients" class="w-16 h-4">
+        </div>
+        <div>
+          <h2 class="text-xl font-semibold counter" data-target="15">0</h2>
+          <p class="text-[#0D1B4C] font-medium uppercase text-sm">Happy Clients</p>
+        </div>
+      </div>
+
+      <!-- Cups of Coffee -->
+      <div class="bg-gradient-to-r from-[#87CEFA] to-white rounded-lg p-4 shadow-sm border flex items-center gap-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="bg-[#0D1B4C] p-3 rounded-full flex items-center justify-center w-14 h-14 hover:scale-105 hover:shadow-md transition">
+          <img src="./images/tea1.png" alt="Coffee" class="w-7 h-8">
+        </div>
+        <div>
+          <h2 class="text-xl font-semibold counter" data-target="5">0</h2>
+          <p class="text-[#0D1B4C] font-medium uppercase text-sm">Cups of Coffee</p>
+        </div>
+      </div>
+
+      <!-- Years Experienced -->
+      <div class="bg-gradient-to-l from-[#87CEFA] to-white rounded-lg p-4 shadow-sm border flex items-center gap-4" data-aos="zoom-in" data-aos-delay="400">
+        <div class="bg-[#0D1B4C] p-3 rounded-full flex items-center justify-center w-14 h-14 hover:scale-105 hover:shadow-md transition">
+          <img src="./images/edu-icon-dark.png" alt="Experience" class="w-6 h-6">
+        </div>
+        <div>
+          <h2 class="text-xl font-semibold counter" data-target="3">0</h2>
+          <p class="text-[#0D1B4C] font-medium uppercase text-sm">Years Experienced</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!------about-------->
+<div id="about" class="w-full px-[12%] py-16 scroll-mt-20 bg-gradient-to-r to-[#87CEFA]">
+
+  <h4 class="text-center mb-2 text-lg text-gray-300" style="font-family: 'Ovo', serif;" data-aos="fade-down" data-aos-delay="100">My intro</h4>
+  <h2 class="text-center text-5xl text-white" style="font-family: 'Ovo', serif;" data-aos="fade-down" data-aos-delay="200">About me</h2>
+
+  <div class="flex w-full flex-col lg:flex-row items-start gap-39 my-20" data-aos="fade-up" data-aos-delay="300">
+    <div class="max-w-max mx-auto relative" data-aos="zoom-in" data-aos-delay="400">
+      <img src="./images/my2.png" alt="" class="w-65 h-40sm:w-80 rounded-3xl max-w-none">
+
+      <div class="bg-white w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] flex items-center justify-center">
+        <img src="./images/circular-text.png" alt="" style="width: 100%;" class="spin-slow">
+        <img src="./images/dev-icon.png" alt="" class="w-1/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      </div>
+    </div>
+
+    <div class="flex-1">
+      <p class="mb-10 max-w-2xl text-white" style="font-family: 'Ovo', serif;" data-aos="fade-left" data-aos-delay="500">
+        I am a third-year IT undergraduate at the Sri Lanka Institute of Information Technology, passionate about programming and aspiring to become a versatile IT professional. I have a strong foundation in both software development and UI/UX design, with a keen interest in full-stack development.
+      </p>
+
+      <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+        <li data-aos="zoom-in-up" data-aos-delay="600" class="bg-gradient-to-r from-[#A4D4FF] to-[#ffffff] rounded-xl p-6 cursor-pointer hover:from-[#87CEFA] hover:to-[#ffffff] hover:text-white hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+          <img src="./images/code-icon.png" alt="" class="w-7 mt-3">
+          <h3 class="my-4 font-semibold text-gray-700">Languages</h3>
+          <p class="text-gray-600 text-sm">HTML, CSS, javaScript React Js, Next Js</p>
+        </li>
+        <li data-aos="zoom-in-up" data-aos-delay="700" class="bg-gradient-to-r from-[#ffffff] to-[#E2E8F0] rounded-xl p-6 cursor-pointer hover:from-[#ffffff] hover:to-[#87CEFA] hover:text-white hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+          <img src="./images/edu-icon.png" alt="" class="w-7 mt-3">
+          <h3 class="my-4 font-semibold text-gray-700">Education</h3>
+          <p class="text-gray-600 text-sm">3rd year IT undergraduate at SLIIT</p>
+        </li>
+        <li data-aos="zoom-in-up" data-aos-delay="800" class="bg-gradient-to-r from-[#ffffff] to-[#A4D4FF] rounded-xl p-6 cursor-pointer hover:from-[#87CEFA] hover:to-[#ffffff] hover:text-white hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+          <img src="./images/project-icon.png" alt="" class="w-7 mt-3">
+          <h3 class="my-4 font-semibold text-gray-700">Projects</h3>
+          <p class="text-gray-600 text-sm">Build more than 5 projects</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Skills Section -->
+<section id="skills" class="w-full bg-[#0D1B4C] px-[12%] py-16 text-white">
+
+  <div class="flex flex-col lg:flex-row justify-between gap-10" data-aos="fade-up" data-aos-delay="100">
+    
+    <!-- Left: Skills Description -->
+    <div class="max-w-xl">
+          <h2 class="text-5xl font-semibold mt-2 mb-4 text-[#F2F6FC]" style="font-family: 'Ovo', serif;">My Skills</h2>
+      <p class="text-gray-300 mb-6 leading-relaxed">
+       I am a versatile IT undergraduate with expertise in software development, UI/UX design, and frontend development, proficient in languages such as Html, CSS, JavaScript, Java, Python, and C++, and experienced with technologies like React, MERN Stack, and modern web design frameworks.
+      </p>
+    <a href="#contact">
+  <button class="px-8 py-2 rounded-full flex items-center gap-2 text-white bg-gradient-to-r from-[#1F3A93] to-[#87CEFA] hover:bg-[#f2f2f2] transition-all duration-300 hover:from-[#87CEFA] hover:to-[#BCD4E6] hover:text-black">
+    Hire Me
+  </button>
+</a>
+
+    </div>
+
+    <!-- Right: Progress Bars -->
+    <div class="flex-1 space-y-6">
+      <div class="skill-bar">
+       <div class="flex justify-between mb-1 text-gray-400 font-medium uppercase text-sm">
+
+          <span>Frontend Development</span><span class="text-gray-300">90%</span>
+        </div>
+        <div class="w-full h-3 bg-gray-700 rounded">
+          <div class="bg-white h-3 rounded bar" data-percent="90%"></div>
+        </div>
+      </div>
+
+      <div class="skill-bar">
+       <div class="flex justify-between mb-1 text-gray-400 font-medium uppercase text-sm">
+
+          <span>UI/UX Design</span><span class="text-gray-300">98%</span>
+        </div>
+        <div class="w-full h-3 bg-gray-700 rounded">
+          <div class="bg-white h-3 rounded bar" data-percent="98%"></div>
+        </div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="flex justify-between mb-1 text-gray-400 font-medium uppercase text-sm">
+
+          <span>Mobile App Design</span><span class="text-gray-300">95%</span>
+        </div>
+        <div class="w-full h-3 bg-gray-700 rounded">
+          <div class="bg-white h-3 rounded bar" data-percent="95%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+<!-- Circular Skills -->
+<div class="grid grid-cols-1 md:grid-cols-6 sm:grid-cols-3 gap-6 mt-16 justify-items-center text-center">
+  <!-- HTML -->
+  <div class="flex flex-col items-center" data-percent="95" data-color="#87CEFA">
+    <div class="relative w-28 h-28 rounded-full flex items-center justify-center"
+         style="background: conic-gradient(#87CEFA 0%, #1a1a1a 0%); background-color: #1a1a1a;">
+      <div class="absolute w-[85px] h-[85px] bg-[#1a1a1a] rounded-full z-0"></div>
+      <div class="z-10 text-white text-lg font-bold">95%</div>
+    </div>
+    <p class="text-sm text-white mt-2">HTML</p>
+  </div>
+
+  <!-- CSS -->
+  <div class="flex flex-col items-center" data-percent="95" data-color="#24c744">
+    <div class="relative w-28 h-28 rounded-full flex items-center justify-center"
+         style="background: conic-gradient(#24c744 0%, #1a1a1a 0%); background-color: #1a1a1a;">
+      <div class="absolute w-[85px] h-[85px] bg-[#1a1a1a] rounded-full z-0"></div>
+      <div class="z-10 text-white text-lg font-bold">95%</div>
+    </div>
+    <p class="text-sm text-white mt-2">CSS</p>
+  </div>
+
+  <!-- JavaScript -->
+  <div class="flex flex-col items-center" data-percent="80" data-color="#D4B1FF">
+    <div class="relative w-28 h-28 rounded-full flex items-center justify-center"
+         style="background: conic-gradient(#D4B1FF 0%, #1a1a1a 0%); background-color: #1a1a1a;">
+      <div class="absolute w-[85px] h-[85px] bg-[#1a1a1a] rounded-full z-0"></div>
+      <div class="z-10 text-white text-lg font-bold">80%</div>
+    </div>
+    <p class="text-sm text-white mt-2">JavaScript</p>
+  </div>
+
+  <!-- React -->
+  <div class="flex flex-col items-center" data-percent="85" data-color="#A0A4AB">
+    <div class="relative w-28 h-28 rounded-full flex items-center justify-center"
+         style="background: conic-gradient(#A0A4AB 0%, #1a1a1a 0%); background-color: #1a1a1a;">
+      <div class="absolute w-[85px] h-[85px] bg-[#1a1a1a] rounded-full z-0"></div>
+      <div class="z-10 text-white text-lg font-bold">85%</div>
+    </div>
+    <p class="text-sm text-white mt-2">React</p>
+  </div>
+
+  <!-- Tailwind CSS -->
+  <div class="flex flex-col items-center" data-percent="80" data-color="#f071c8">
+    <div class="relative w-28 h-28 rounded-full flex items-center justify-center"
+         style="background: conic-gradient(#f071c8 0%, #1a1a1a 0%); background-color: #1a1a1a;">
+      <div class="absolute w-[85px] h-[85px] bg-[#1a1a1a] rounded-full z-0"></div>
+      <div class="z-10 text-white text-lg font-bold">80%</div>
+    </div>
+    <p class="text-sm text-white mt-2">Tailwind CSS</p>
+  </div>
+
+  <!-- MERN Stack -->
+  <div class="flex flex-col items-center" data-percent="85" data-color="#34e3db">
+    <div class="relative w-28 h-28 rounded-full flex items-center justify-center"
+         style="background: conic-gradient(#34e3db 0%, #1a1a1a 0%); background-color: #1a1a1a;">
+      <div class="absolute w-[85px] h-[85px] bg-[#1a1a1a] rounded-full z-0"></div>
+      <div class="z-10 text-white text-lg font-bold">85%</div>
+    </div>
+    <p class="text-sm text-white mt-2">MERN Stack</p>
+  </div>
+</div>
+
+  <div class="w-full px-[5%] py-8 ">
+     <h4 class="mt-10 mb-6 text-center text-xl sm:text-2xl text-white font-semibold" style="font-family: 'Ovo', serif;" data-aos="fade-up">
+    Tools I Use
+  </h4>
+  <p></p>
+
+  <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+    <div class="tool-box-small"><img src="./images/vscode.png" alt="VS Code" /></div>
+    <div class="tool-box-small"><img src="./images/github.png" alt="GitHub" /></div>
+    <div class="tool-box-small"><img src="./images/figma.png" alt="Figma" /></div>
+    <div class="tool-box-small"><img src="./images/mongodb1.webp" alt="MongoDB" /></div>
+    <div class="tool-box-small"><img src="./images/draw.io.png" alt="Draw.io" /></div>
+    <div class="tool-box-small"><img src="./images/eclipse.svg" alt="Eclipse" /></div>
+    <div class="tool-box-small"><img src="./images/android.png" alt="Android" /></div>
+    <div class="tool-box-small"><img src="./images/react.png" alt="React" /></div>
+    <div class="tool-box-small"><img src="./images/nodejs.jpg" alt="Node.js" /></div>
+  </div>
+  </div>
+</section>
+
+ <!------services-------->
+<div id="services" class="w-full px-4 py-10 scroll-mt-20 bg-gradient-to-br from-[#1A274F] to-[#294B8A]">
+  <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-md px-10 py-10 text-sm mb-5">
+    <!-- Section Titles -->
+    <h4 class="text-gray-500 text-center mb-2 mt-2 text-base" style="font-family: 'Ovo', serif;">I AM GREAT AT</h4>
+    <h2 class="text-center text-[#2C3E50] text-3xl mt-2 mb-6 font-semibold" style="font-family: 'Ovo', serif;">
+      I deliver exceptional services to my clients.
+    </h2>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed tracking-wide text-[0.95rem]">
+      Crafting Innovative Solutions with Precision and Passion, We Ensure Every Client's Journey is One of Success and Satisfaction.
+    </p>
+
+    <!-- Smaller Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-10">
+      <!-- Example Card (repeat for each service) -->
+    <div class="relative group text-xs" data-aos="fade-up" data-aos-delay="100">
+        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 z-20 bg-[#5B7491] rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-[#0A153A] group-hover:translate-x-1">
+          <img src="./images/ui.png" alt="" class="w-5 h-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" />
+        </div>
+        <div class="bg-gradient-to-r from-[#F0F7FF] to-[#CBE3F9] rounded-lg px-4 pt-16 pb-10 text-center shadow-md transition-all duration-300 group-hover:bg-[#2C3E50] group-hover:-translate-y-1">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-[#0D1B4C]">UI/UX Design</h3>
+          <p class="text-sm text-gray-600 group-hover:text-gray-400 tracking-wide leading-relaxed px-1">
+            Crafting intuitive, engaging, user-centered experiences
+          </p>
+        </div>
+      </div>
+
+      <!-- Repeat with same structure -->
+   <div class="relative group text-xs" data-aos="fade-up" data-aos-delay="200">
+        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 z-20 bg-[#5B7491] rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-[#0A153A] group-hover:translate-x-1">
+          <img src="./images/web2.png" alt="" class="w-5 h-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" />
+        </div>
+        <div class="bg-gradient-to-r from-[#F0F7FF] to-[#CBE3F9] rounded-lg px-4 pt-16 pb-10 text-center shadow-md transition-all duration-300 group-hover:bg-[#2C3E50] group-hover:-translate-y-1">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-[#0D1B4C]">Responsive Design</h3>
+          <p class="text-sm text-gray-600 group-hover:text-gray-400 tracking-wide leading-relaxed px-1">
+         Adapts seamlessly across all device screen and devices.
+          </p>
+        </div>
+      </div>
+
+   <div class="relative group text-xs" data-aos="fade-up" data-aos-delay="300">
+        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 z-20 bg-[#5B7491] rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-[#0A153A] group-hover:translate-x-1">
+          <img src="./images/web app.png" alt="" class="w-5 h-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" />
+        </div>
+        <div class="bg-gradient-to-r from-[#F0F7FF] to-[#CBE3F9] rounded-lg px-4 pt-16 pb-10 text-center shadow-md transition-all duration-300 group-hover:bg-[#2C3E50] group-hover:-translate-y-1">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-[#0D1B4C]">Version Control</h3>
+          <p class="text-sm text-gray-600 group-hover:text-gray-400 tracking-wide leading-relaxed px-1">
+            Tracks changes, collaborates, manages code history.
+          </p>
+        </div>
+      </div>
+
+<div class="relative group text-xs" data-aos="fade-up" data-aos-delay="400">
+        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 z-20 bg-[#5B7491] rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-[#0A153A] group-hover:translate-x-1">
+          <img src="./images/images.png" alt="" class="w-5 h-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" />
+        </div>
+        <div class="bg-gradient-to-r from-[#F0F7FF] to-[#CBE3F9] rounded-lg px-4 pt-16 pb-10 text-center shadow-md transition-all duration-300 group-hover:bg-[#2C3E50] group-hover:-translate-y-1">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-[#0D1B4C]">Problem Solving</h3>
+          <p class="text-sm text-gray-600 group-hover:text-gray-400 tracking-wide leading-relaxed px-1">
+           Analyzing issues, thinking critically, creating effective solutions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Project CTA Section -->
+<div class="relative bg-gradient-to-l to-[#87CEFA] w-full px-6 md:px-[12%] py-14 md:py-16 overflow-visible z-0 " data-aos="fade-up">
+  <!-- Main Content Wrapper -->
+  <div class="relative z-10 flex flex-col md:flex-row items-start justify-between gap-8">
+    <!-- Text Content -->
+    <div class="text-center md:text-left max-w-xl w-full z-20" data-aos="fade-right" data-aos-delay="100">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4" style="font-family: 'Ovo', serif;">
+        Have a project on your mind.
+      </h2>
+      <p class="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-5 px-2 md:px-0" style="font-family: 'Ovo', serif;">
+        Empowering Your Vision: Partner with Us to Transform Ideas into Impactful Solutions, Driving Innovation and Success in Every Project.
+      </p>
+      <a href="#contact"
+         class="inline-block px-6 py-2 sm:px-8 sm:py-3 bg-white text-[#0A153A] rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-300 hover:text-white hover:bg-[#6F8BA3]">
+        Contact me
+      </a>
+    </div>
+  </div>
+  <!-- Image: Bottom-right and overlapping upward -->
+ <div class="hidden sm:block absolute bottom-45 right-6 md:right-[12%] z-10 translate-y-1/2 pointer-events-none" data-aos="zoom-in-left" data-aos-delay="300">
+    <img src="./images/lap3.png" alt="3D Character with Laptop"
+         class="w-[180px] sm:w-[250px] md:w-[320px] object-contain" />
+  </div>
+</div>
+ <!------my work-------->
+
+<section id="work" class="w-full bg-[#0D1B4C] px-5 sm:px-[12%] py-20 font-[Ovo,sans-serif] text-white">
+  <div class="max-w-[1200px] mx-auto">
+    <div class="flex justify-between items-center flex-wrap gap-4 mb-10">
+      <div>
+        <h2 class="text-5xl font-semibold mt-2 mb-4 text-white" style="font-family: 'Ovo', serif;">My Projects</h2>
+        <p class="text-[#d3d3d3] max-w-2xl mx-auto text-base sm:text-lg" style="font-family: 'Ovo', serif;">A Journey Through my Trailblazing Achievements</p>
+      </div> 
+      <a href="https://github.com/maheesha999?tab=repositories" class="btn py-3 px-5 bg-white text-[#1F3A93] font-semibold rounded-full hover:bg-[#6F8BA3] hover:text-white transition-all duration-300">See All Projects</a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+      <!-- Project Card -->
+      <div class="relative overflow-hidden rounded-xl h-[320px] bg-white shadow-[0_12px_30px_rgba(0,0,0,0.15)] transition-transform duration-300 hover:-translate-y-1.5" data-aos="fade-up">
+        <div class="w-full h-full relative">
+          <img src="./images/project1.jpg.png" alt="Project 1" class="w-full h-full object-cover rounded-xl">
+          <div class="absolute inset-0 bg-[#0D1B4C]/80 opacity-0 hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center p-5 rounded-xl">
+            <p class="text-sm text-[#9ab6ff] mb-1">Frontend Development</p>
+            <h3 class="text-lg font-bold">Petcare E-Commerce</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Repeat for each card -->
+      <div class="relative overflow-hidden rounded-xl h-[320px] bg-white shadow-[0_12px_30px_rgba(0,0,0,0.15)] transition-transform duration-300 hover:-translate-y-1.5" data-aos="fade-up">
+        <div class="w-full h-full relative">
+          <img src="./images/project2.png" alt="Project 2" class="w-full h-full object-cover rounded-xl">
+          <div class="absolute inset-0 bg-[#0D1B4C]/80 opacity-0 hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center p-5 rounded-xl">
+            <p class="text-sm text-[#9ab6ff] mb-1">Frontend Development</p>
+            <h3 class="text-lg font-bold">E-Commerce App</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Repeat for each card (same structure) -->
+      <div class="relative overflow-hidden rounded-xl h-[320px] bg-white shadow-[0_12px_30px_rgba(0,0,0,0.15)] transition-transform duration-300 hover:-translate-y-1.5" data-aos="fade-up">
+        <div class="w-full h-full relative">
+          <img src="./images/project3.png" alt="Project 3" class="w-full h-full object-cover rounded-xl">
+          <div class="absolute inset-0 bg-[#0D1B4C]/80 opacity-0 hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center p-5 rounded-xl">
+            <p class="text-sm text-[#9ab6ff] mb-1">Frontend Development</p>
+            <h3 class="text-lg font-bold">Hotel Booking App</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative overflow-hidden rounded-xl h-[320px] bg-white shadow-[0_12px_30px_rgba(0,0,0,0.15)] transition-transform duration-300 hover:-translate-y-1.5" data-aos="fade-up">
+        <div class="w-full h-full relative">
+          <img src="./images/project4.png" alt="Project 4" class="w-full h-full object-cover rounded-xl">
+          <div class="absolute inset-0 bg-[#0D1B4C]/80 opacity-0 hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center p-5 rounded-xl">
+            <p class="text-sm text-[#9ab6ff] mb-1">Full-stack Development</p>
+            <h3 class="text-lg font-bold">Coconut Plantation Management App</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative overflow-hidden rounded-xl h-[320px] bg-white shadow-[0_12px_30px_rgba(0,0,0,0.15)] transition-transform duration-300 hover:-translate-y-1.5" data-aos="fade-up">
+        <div class="w-full h-full relative">
+          <img src="./images/project5.png" alt="Project 5" class="w-full h-full object-cover rounded-xl">
+          <div class="absolute inset-0 bg-[#0D1B4C]/80 opacity-0 hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center p-5 rounded-xl">
+            <p class="text-sm text-[#9ab6ff] mb-1">Full-stack Development</p>
+            <h3 class="text-lg font-bold">Ayurveda Doctor Management App</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative overflow-hidden rounded-xl h-[320px] bg-white shadow-[0_12px_30px_rgba(0,0,0,0.15)] transition-transform duration-300 hover:-translate-y-1.5" data-aos="fade-up">
+        <div class="w-full h-full relative">
+          <img src="./images/project6.png" alt="Project 6" class="w-full h-full object-cover rounded-xl">
+          <div class="absolute inset-0 bg-[#0D1B4C]/80 opacity-0 hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center p-5 rounded-xl">
+            <p class="text-sm text-[#9ab6ff] mb-1">Mobile App Design</p>
+            <h3 class="text-lg font-bold">Doctor Chanelling App</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative overflow-hidden rounded-xl h-[320px] bg-white shadow-[0_12px_30px_rgba(0,0,0,0.15)] transition-transform duration-300 hover:-translate-y-1.5" data-aos="fade-up">
+        <div class="w-full h-full relative">
+          <img src="./images/project7.png" alt="Project 7" class="w-full h-full object-cover rounded-xl">
+          <div class="absolute inset-0 bg-[#0D1B4C]/80 opacity-0 hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center text-center p-5 rounded-xl">
+            <p class="text-sm text-[#9ab6ff] mb-1">Full-stack Development</p>
+            <h3 class="text-lg font-bold">Clothing App</h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Wrapper -->
+<div id="contact" class="w-full px-[12%] py-20 bg-gradient-to-r to-[#87CEFA] scroll-mt-20">
+  <div class="text-center mb-12" data-aos="fade-up">
+    <h4 class="text-lg text-gray-300" style="font-family: 'Ovo', serif;">CONTACT ME</h4>
+    <h2 class="text-5xl font-semibold mt-2 mb-4 text-[#F2F6FC]" style="font-family: 'Ovo', serif;">Let’s Connect</h2>
+    <p class="max-w-2xl mx-auto text-white text-base sm:text-lg" style="font-family: 'Ovo', serif;">
+      I'm always excited to collaborate — Drop a message and let's build something great!
+    </p>
+  </div>
+  <!-- Two-column layout -->
+ <div class="max-w-5xl mx-auto bg-white/90 backdrop-blur-md border border-gray-200 shadow-xl rounded-2xl p-10 flex flex-col md:flex-row gap-10" data-aos="zoom-in-up">
+    
+    <!-- Left: Info Panel -->
+    <div class="md:w-1/2 space-y-4 text-left flex flex-col justify-center" data-aos="fade-right">
+      <img src="./images/cont.png" alt="Avatar" class="w-54 h-54 rounded-full object-cover mx-auto md:mx-0" />
+      <div class="text-gray-700 text-base mt-4 space-y-3">
+        <p class="flex items-center gap-3">
+           <span class="w-9 h-9 flex items-center justify-center rounded-full bg-black">
+      <ion-icon name="call-outline" class="text-white text-lg"></ion-icon>
+    </span>
+          +94 77 939 3469
+        </p>
+        <p class="flex items-center gap-3">
+          <span class="w-9 h-9 flex items-center justify-center rounded-full bg-black">
+      <ion-icon name="mail-outline" class="text-white text-lg"></ion-icon>
+    </span>
+          maheeshaliyanage999@gmail.com
+        </p>
+        <p class="flex items-center gap-3">
+          <span class="w-9 h-9 flex items-center justify-center rounded-full bg-black">
+      <ion-icon name="location-outline" class="text-white text-lg"></ion-icon>
+    </span>
+          Colombo, Sri Lanka
+        </p>
+        <p class="text-sm text-gray-600 mt-2">
+          Feel free to reach out anytime. I’ll get back to you shortly. Thanks for visiting!
+        </p>
+      </div>
+    </div>
+
+    <!-- Right: Contact Form -->
+    <div class="md:w-1/2" data-aos="fade-left" data-aos-delay="100">
+      <form method="POST" action="https://api.web3forms.com/submit" class="space-y-6">
+        <input type="hidden" name="access_key" value="e860ee0a-9703-4a15-961d-f849fa12bc93">
+
+        <input type="text" name="name" placeholder="Enter your Full Name" required
+          class="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D1B4C] transition" />
+
+        <input type="email" name="email" placeholder="Enter your Email" required
+          class="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D1B4C] transition" />
+
+        <input type="text" name="subject" placeholder="Enter Subject"
+       class="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D1B4C] transition" />
+
+        <textarea name="message" rows="4" placeholder="Message / Queries" required
+          class="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0D1B4C] transition"></textarea>
+
+        <div class="text-center">
+          <button type="submit"
+            class="py-3 px-10 bg-[#0D1B4C] text-white font-semibold rounded-full hover:bg-[#6F8BA3] transition duration-300 flex items-center justify-center gap-3 mx-auto">
+            Send <img src="./images/right-arrow-white.png" alt="" class="w-4 h-4" />
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!------footer-------->
+<footer class="bg-[#0D1B4C] text-white pt-16 pb-10">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+    <!-- Brand & Contact -->
+    <div class="flex flex-col justify-between h-full">
+      <div>
+        <h4 class="text-lg font-semibold -mt-7.5 -ml-4">
+          <img src="./images/logo2.png" alt="Logo" class="w-36">
+        </h4>
+        <p class="text-sm text-gray-300 mb-4 -mt-4">
+          Imagine a world where ideas flow seamlessly, where creativity and collaboration break through boundaries. Let’s embark on a journey to turn visionary concepts into reality together.
+        </p>
+        <a href="https://www.linkedin.com/in/maheesha-liyanage-6a634b320/"
+           class="inline-block mt-2 px-4 py-2 bg-white text-[#0D1B4C] text-sm font-semibold rounded-md shadow hover:bg-gray-200 transition duration-300">
+          Learn More
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="flex flex-col justify-between h-full ml-20">
+      <div>
+        <h4 class="text-lg font-semibold mb-5">Quick Links</h4>
+        <ul class="space-y-3 text-sm text-gray-300">
+          <li><a href="#about" class="hover:text-white transition">About Me</a></li>
+          <li><a href="#services" class="hover:text-white transition">Services</a></li>
+          <li><a href="#projects" class="hover:text-white transition">Projects</a></li>
+          <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="flex flex-col justify-between h-full ml-20 sm:ml-1">
+      <div>
+        <h4 class="text-lg font-semibold mb-5">What I Do</h4>
+        <ul class="space-y-3 text-sm text-gray-300">
+          <li>Web Design</li>
+          <li>Mobile App Design</li>
+          <li>UI/UX Strategy</li>
+          <li>Responsive Development</li>
+        </ul>
+      </div>
+    </div>
+
+ <!-- Social Media -->
+<div class="flex flex-col justify-between h-full ml-20">
+  <div>
+    <h4 class="text-lg font-semibold mb-5">Follow Me</h4>
+
+    <!-- Contact Details -->
+<ul class="space-y-4 text-sm text-gray-300 mb-6">
+  <li class="flex items-center gap-3">
+    <ion-icon name="location-outline" class="text-white text-[20px] min-w-[20px]"></ion-icon>
+    <span>Alupothawatta,Imbulgoda,Akuressa.</span>
+  </li>
+  <li class="flex items-center gap-3">
+    <ion-icon name="call-outline" class="text-white text-[20px] min-w-[20px]"></ion-icon>
+    <span>+94 77 939 3469</span>
+  </li>
+  <li class="flex items-center gap-3">
+    <ion-icon name="mail-outline" class="text-white text-[20px] min-w-[20px]"></ion-icon>
+    <span>maheeshaliyanage999@gmail.com</span>
+  </li>
+</ul>
+
+
+    <!-- Social Icons -->
+    <ul class="flex gap-5 text-2xl text-white">
+      <li><a href="https://www.facebook.com/share/12KU4ckXM3L/" target="_blank" class="hover:text-gray-300 transition"><ion-icon name="logo-facebook"></ion-icon></a></li>
+      <li><a href="https://github.com/maheesha999" target="_blank" class="hover:text-gray-300 transition"><ion-icon name="logo-github"></ion-icon></a></li>
+      <li><a href="https://www.linkedin.com/in/maheesha-liyanage-6a634b320/" target="_blank" class="hover:text-gray-300 transition"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+    </ul>
+  </div>
+</div>
+
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-white/20 mt-12 pt-6 text-center px-6 text-sm text-gray-400">
+    &copy; 2025 All rights reserved | Designed by <span class="text-white font-medium">Mahee.</span>
+  </div>
+</footer>
+
+
+
+
+        <script src="./script.js"></script>
+    </body>
+</html>
